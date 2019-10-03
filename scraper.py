@@ -88,7 +88,8 @@ def savePostsToFile(token,pageId,num):
 		posts[i].append(comments)
 	#print(posts)
 	with open("posts.txt","w",encoding='utf-8') as file:
-			file.write(str(posts))
+			posts = str(posts)
+			file.write(posts)
 
 
 
@@ -143,7 +144,7 @@ token = #Assign access token
 
 #This may take upto 80-90 seconds if you do with 100 posts
 
-savePostsToFile(token,pageId,100)  #Saves 100 posts to posts.txt
+savePostsToFile(token,pageId,120)  #Saves 100 posts to posts.txt
 feedData = giveJsonDict() #Reads posts.txt and creates a dictionary
 saveSortedCommentsToFile(feedData) #Creates SortedByComments.txt in human readable format
 saveSortedLikesToFile(feedData) #Creates SortedByLikes.txt in human readable format
